@@ -1,0 +1,15 @@
+repository_type: pipeline
+
+nf_core_version: 3.4.1
+
+lint: {}
+
+template:
+  org: nf-core
+  name: hyphy
+  description: Selection analysis using HyPhy
+  author: Nina Xiong
+  version: 1.0.0dev
+  force: true
+  outdir: .
+  is_nfcore: true
