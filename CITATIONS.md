@@ -1,4 +1,4 @@
-# nf-core/hyphy: Citations
+# nf-core/phyloanalysis: Citations
 
 ## [nf-core](https://pubmed.ncbi.nlm.nih.gov/32055031/)
 
@@ -10,13 +10,31 @@
 
 ## Pipeline tools
 
-- [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+- [HyPhy](https://pubmed.ncbi.nlm.nih.gov/31504749/)
 
-> Andrews, S. (2010). FastQC: A Quality Control Tool for High Throughput Sequence Data [Online].
+  > Kosakovsky Pond SL, Poon AFY, Velazquez R, Weaver S, Hepler NL, Murrell B, Shank SD, Magalis BR, Bouvier D, Nekrutenko A, Wisotsky S, Spielman SJ, Frost SDW, Muse SV. HyPhy 2.5-A Customizable Platform for Evolutionary Hypothesis Testing Using Phylogenies. Mol Biol Evol. 2020 Jan 1;37(1):295-299. doi: 10.1093/molbev/msz197. PMID: 31504749; PMCID: PMC8204705.
 
-- [MultiQC](https://pubmed.ncbi.nlm.nih.gov/27312411/)
+- [aBSREL](https://pubmed.ncbi.nlm.nih.gov/25697341/)
 
-> Ewels P, Magnusson M, Lundin S, Käller M. MultiQC: summarize analysis results for multiple tools and samples in a single report. Bioinformatics. 2016 Oct 1;32(19):3047-8. doi: 10.1093/bioinformatics/btw354. Epub 2016 Jun 16. PubMed PMID: 27312411; PubMed Central PMCID: PMC5039924.
+  > Smith MD, Wertheim JO, Weaver S, Murrell B, Scheffler K, Kosakovsky Pond SL. Less is more: an adaptive branch-site random effects model for efficient detection of episodic diversifying selection. Mol Biol Evol. 2015 May;32(5):1342-53. doi: 10.1093/molbev/msv022. Epub 2015 Feb 19. PMID: 25697341; PMCID: PMC4408413.
+
+- [BUSTED](https://pubmed.ncbi.nlm.nih.gov/25701167/)
+
+  > Murrell B, Weaver S, Smith MD, Wertheim JO, Murrell S, Aylward A, Eren K, Pollner T, Martin DP, Smith DM, Scheffler K, Kosakovsky Pond SL. Gene-wide identification of episodic selection. Mol Biol Evol. 2015 May;32(5):1365-71. doi: 10.1093/molbev/msv035. Epub 2015 Feb 19. PMID: 25701167; PMCID: PMC4408417.
+
+- [MEME](https://pubmed.ncbi.nlm.nih.gov/22807683/)
+
+  > Murrell B, Wertheim JO, Moola S, Weighill T, Scheffler K, Kosakovsky Pond SL. Detecting individual sites subject to episodic diversifying selection. PLoS Genet. 2012;8(7):e1002764. doi: 10.1371/journal.pgen.1002764. Epub 2012 Jul 12. PMID: 22807683; PMCID: PMC3395634.
+
+- [RELAX](https://pubmed.ncbi.nlm.nih.gov/25540451/)
+
+  > Wertheim JO, Murrell B, Smith MD, Kosakovsky Pond SL, Scheffler K. RELAX: detecting relaxed selection in a phylogenetic framework. Mol Biol Evol. 2015 Mar;32(3):820-32. doi: 10.1093/molbev/msu400. Epub 2014 Dec 23. PMID: 25540451; PMCID: PMC4327161.
+
+## Pipeline references
+
+- [Enard et al. (2016)](https://doi.org/10.7554/eLife.12469)
+
+  > Enard D, Cai L, Gwennap C, Petrov DA. Viruses are a dominant driver of protein adaptation in mammals. eLife. 2016 May 17;5:e12469. doi: 10.7554/eLife.12469.
 
 ## Software packaging/containerisation tools
 

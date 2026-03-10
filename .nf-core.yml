@@ -6,8 +6,8 @@ lint: {}
 
 template:
   org: nf-core
-  name: hyphy
-  description: Selection analysis using HyPhy
+  name: phyloanalysis
+  description: Selection analysis using phylogenetics
   author: Nina Xiong
   version: 1.0.0dev
   force: true

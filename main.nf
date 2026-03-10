@@ -1,11 +1,11 @@
 #!/usr/bin/env nextflow
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    nf-core/hyphy
+    nf-core/phyloanalysis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Github : https://github.com/nf-core/hyphy
-    Website: https://nf-co.re/hyphy
-    Slack  : https://nfcore.slack.com/channels/hyphy
+    Github : https://github.com/nf-core/phyloanalysis
+    Website: https://nf-co.re/phyloanalysis
+    Slack  : https://nfcore.slack.com/channels/phyloanalysis
 ----------------------------------------------------------------------------------------
 */
 
@@ -15,21 +15,9 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { HYPHY  } from './workflows/hyphy'
-include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_hyphy_pipeline'
-include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_hyphy_pipeline'
-include { getGenomeAttribute      } from './subworkflows/local/utils_nfcore_hyphy_pipeline'
-
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    GENOME PARAMETER VALUES
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-
-// TODO nf-core: Remove this line if you don't need a FASTA file
-//   This is an example of how to use getGenomeAttribute() to fetch parameters
-//   from igenomes.config using `--genome`
-params.fasta = getGenomeAttribute('fasta')
+include { PHYLOANALYSIS  } from './workflows/phyloanalysis'
+include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_phyloanalysis_pipeline'
+include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_phyloanalysis_pipeline'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,7 +28,7 @@ params.fasta = getGenomeAttribute('fasta')
 //
 // WORKFLOW: Run main analysis pipeline depending on type of input
 //
-workflow NFCORE_HYPHY {
+workflow NFCORE_PHYLOANALYSIS {
 
     take:
     samplesheet // channel: samplesheet read in from --input
@@ -50,11 +38,9 @@ workflow NFCORE_HYPHY {
     //
     // WORKFLOW: Run pipeline
     //
-    HYPHY (
+    PHYLOANALYSIS (
         samplesheet
     )
-    emit:
-    multiqc_report = HYPHY.out.multiqc_report // channel: /path/to/multiqc_report.html
 }
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,7 +69,7 @@ workflow {
     //
     // WORKFLOW: Run main workflow
     //
-    NFCORE_HYPHY (
+    NFCORE_PHYLOANALYSIS (
         PIPELINE_INITIALISATION.out.samplesheet
     )
     //
@@ -95,8 +81,7 @@ workflow {
         params.plaintext_email,
         params.outdir,
         params.monochrome_logs,
-        params.hook_url,
-        NFCORE_HYPHY.out.multiqc_report
+        params.hook_url
     )
 }
 

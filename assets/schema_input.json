@@ -1,33 +1,39 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/nf-core/hyphy/master/assets/schema_input.json",
-    "title": "nf-core/hyphy pipeline - params.input schema",
+    "$id": "https://raw.githubusercontent.com/nf-core/phyloanalysis/master/assets/schema_input.json",
+    "title": "nf-core/phyloanalysis pipeline - params.input schema",
     "description": "Schema for the file provided with params.input",
     "type": "array",
     "items": {
         "type": "object",
         "properties": {
-            "sample": {
+            "gene_name": {
                 "type": "string",
                 "pattern": "^\\S+$",
-                "errorMessage": "Sample name must be provided and cannot contain spaces",
+                "errorMessage": "Gene name must be provided and cannot contain spaces",
                 "meta": ["id"]
             },
-            "fastq_1": {
+            "alignment": {
                 "type": "string",
                 "format": "file-path",
-                "exists": true,
-                "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.f(ast)?q\\.gz$",
-                "errorMessage": "FastQ file for reads 1 must be provided, cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
+                "errorMessage": "Alignment file must be provided and cannot contain spaces"
             },
-            "fastq_2": {
+            "tree": {
                 "type": "string",
                 "format": "file-path",
-                "exists": true,
-                "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.f(ast)?q\\.gz$",
-                "errorMessage": "FastQ file for reads 2 cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
+                "errorMessage": "Tree file must be provided and cannot contain spaces"
+            },
+            "suite": {
+                "type": "string",
+                "enum": ["hyphy"],
+                "errorMessage": "Suite must be one of: hyphy"
+            },
+            "tool": {
+                "type": "string",
+                "enum": ["absrel", "busted", "meme", "relax"],
+                "errorMessage": "Tool must be one of: absrel, busted, meme, relax"
             }
         },
-        "required": ["sample", "fastq_1"]
+        "required": ["gene_name", "alignment", "tree", "suite", "tool"]
     }
 }

@@ -1,6 +1,6 @@
-# nf-core/hyphy: Documentation
+# nf-core/phyloanalysis: Documentation
 
-The nf-core/hyphy documentation is split into the following pages:
+The nf-core/phyloanalysis documentation is split into the following pages:
 
 - [Usage](usage.md)
   - An overview of how the pipeline works, how to run it and a description of all of the different command-line flags.
