@@ -32,8 +32,8 @@
             },
             "tool": {
                 "type": "string",
-                "enum": ["absrel", "busted", "meme", "relax"],
-                "errorMessage": "Tool must be one of: absrel, busted, meme, relax"
+                "enum": ["absrel", "busted", "meme", "relax", "slac"],
+                "errorMessage": "Tool must be one of: absrel, busted, meme, relax, slac"
             }
         },
         "required": ["gene_name", "alignment", "tree", "suite", "tool"]

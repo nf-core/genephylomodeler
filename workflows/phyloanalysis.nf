@@ -7,6 +7,7 @@ include { HYPHY_ABSREL            } from '../modules/local/hyphy_absrel/main'
 include { HYPHY_BUSTED            } from '../modules/local/hyphy_busted/main'
 include { HYPHY_MEME              } from '../modules/local/hyphy_meme/main'
 include { HYPHY_RELAX             } from '../modules/local/hyphy_relax/main'
+include { HYPHY_SLAC             } from '../modules/local/hyphy_slac/main'
 include { softwareVersionsToYAML  } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 
 /*
@@ -34,6 +35,7 @@ workflow PHYLOANALYSIS {
                 busted: meta.suite == 'hyphy' && meta.tool == 'busted'
                 meme:   meta.suite == 'hyphy' && meta.tool == 'meme'
                 relax:  meta.suite == 'hyphy' && meta.tool == 'relax'
+                slac:  meta.suite == 'hyphy' && meta.tool == 'slac'
         }
         .set { ch_branched }
 
@@ -60,6 +62,12 @@ workflow PHYLOANALYSIS {
     //
     HYPHY_RELAX ( ch_branched.relax )
     ch_versions = ch_versions.mix(HYPHY_RELAX.out.versions.first())
+
+    //
+    // MODULE: SLAC - Single-Likelihood Ancestor Counting
+    //
+    HYPHY_SLAC ( ch_branched.slac )
+    ch_versions = ch_versions.mix(HYPHY_SLAC.out.versions.first())
 
     //
     // Collate and save software versions
