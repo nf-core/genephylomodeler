@@ -2,8 +2,11 @@
 work/
 data/
 results/
+results_*/
 .DS_Store
 testing/
 testing*
 *.pyc
 null/
+.nf-test/
+.nf-test.log
