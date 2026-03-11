@@ -105,16 +105,7 @@ workflow PIPELINE_INITIALISATION {
         .fromList(samplesheetToList(params.input, "${projectDir}/assets/schema_input.json"))
         .map {
             meta, alignment, tree, suite, tool ->
-                def resolve = { path ->
-                    def resolved = path.toString()
-                        .replace('${projectDir}', projectDir.toString())
-                    // Remove any doubled path prefix from samplesheetToList resolution
-                    if (resolved.contains(projectDir.toString())) {
-                        resolved = resolved.substring(resolved.indexOf(projectDir.toString()))
-                    }
-                    return file(resolved)
-                }
-                return [ meta + [ suite: suite, tool: tool ], resolve(alignment), resolve(tree) ]
+                return [ meta + [ suite: suite, tool: tool ], alignment, tree ]
         }
         .set { ch_samplesheet }
 
