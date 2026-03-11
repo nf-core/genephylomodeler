@@ -1,0 +1,30 @@
+{
+    "-profile test": {
+        "content": [
+            {
+                "HYPHY_ABSREL": {
+                    "hyphy": "2.5.96(MP)"
+                },
+                "Workflow": {
+                    "nf-core/phyloanalysis": "v1.0.0dev"
+                }
+            },
+            [
+                "absrel",
+                "absrel/KSR2_ABSREL.json",
+                "absrel/KSR2_ABSREL_output.txt",
+                "pipeline_info",
+                "pipeline_info/nf_core_phyloanalysis_software_mqc_versions.yml"
+            ],
+            [
+                "KSR2_ABSREL.json:md5,93a862faed1f3e647e4560bad4df8356",
+                "KSR2_ABSREL_output.txt:md5,5fffa950766e6b74d3b5064417c359fc"
+            ]
+        ],
+        "meta": {
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.3"
+        },
+        "timestamp": "2026-03-11T19:07:03.529718053"
+    }
+}
