@@ -5,6 +5,24 @@
                 "HYPHY_ABSREL": {
                     "hyphy": "2.5.96(MP)"
                 },
+                "HYPHY_BGM": {
+                    "hyphy": "2.5.96(MP)"
+                },
+                "HYPHY_BUSTED": {
+                    "hyphy": "2.5.96(MP)"
+                },
+                "HYPHY_FEL": {
+                    "hyphy": "2.5.96(MP)"
+                },
+                "HYPHY_MEME": {
+                    "hyphy": "2.5.96(MP)"
+                },
+                "HYPHY_RELAX": {
+                    "hyphy": "2.5.96(MP)"
+                },
+                "HYPHY_SLAC": {
+                    "hyphy": "2.5.96(MP)"
+                },
                 "Workflow": {
                     "nf-core/genephylomodeler": "v1.0.0dev"
                 }
@@ -13,18 +31,47 @@
                 "absrel",
                 "absrel/KSR2_ABSREL.json",
                 "absrel/KSR2_ABSREL_output.txt",
+                "busted",
+                "busted/KSR2_BUSTED.json",
+                "busted/KSR2_BUSTED_output.txt",
+                "fel",
+                "fel/KSR2_FEL.json",
+                "fel/KSR2_FEL_output.txt",
+                "hyphy",
+                "hyphy/KSR2_BGM.json",
+                "hyphy/KSR2_BGM_output.txt",
+                "hyphy/KSR2_SLAC.json",
+                "hyphy/KSR2_SLAC_output.txt",
+                "meme",
+                "meme/KSR2_MEME.json",
+                "meme/KSR2_MEME_output.txt",
                 "pipeline_info",
-                "pipeline_info/nf_core_genephylomodeler_software_mqc_versions.yml"
+                "pipeline_info/nf_core_genephylomodeler_software_mqc_versions.yml",
+                "relax",
+                "relax/KSR2_RELAX.json",
+                "relax/KSR2_RELAX_output.txt"
             ],
             [
-                "KSR2_ABSREL.json:md5,93a862faed1f3e647e4560bad4df8356",
-                "KSR2_ABSREL_output.txt:md5,5fffa950766e6b74d3b5064417c359fc"
+                "KSR2_ABSREL.json:md5,cd6268f9d82eabda6779c883801e1c82",
+                "KSR2_ABSREL_output.txt:md5,83a1636d47ef54c045679ca7ac30a968",
+                "KSR2_BUSTED.json:md5,604613d545ab7ececc3efe870d78628c",
+                "KSR2_BUSTED_output.txt:md5,b65eacd7d1b0fedd52192dda6848b802",
+                "KSR2_FEL.json:md5,a624e1ae9e34aabfcb3cab72c7e222e3",
+                "KSR2_FEL_output.txt:md5,15d750dbfa457f28ac66070a513399f0",
+                "KSR2_BGM.json:md5,1bee969d1a194bd68cf6a941485634f7",
+                "KSR2_BGM_output.txt:md5,5f2a8639522610e24f5312764e546a1e",
+                "KSR2_SLAC.json:md5,9079fead742eace1a746d091428173ef",
+                "KSR2_SLAC_output.txt:md5,5d93d9b592806b43ffb00d432baf03a5",
+                "KSR2_MEME.json:md5,00bbfdf88666efc11a3605f29c20f170",
+                "KSR2_MEME_output.txt:md5,38a5f17c960f00e07b27cd5abb7eeb9d",
+                "KSR2_RELAX.json:md5,449b8480b40feafabe431cedaf5044a9",
+                "KSR2_RELAX_output.txt:md5,503a46a6bb31b35753ad718f09babee5"
             ]
         ],
         "meta": {
             "nf-test": "0.9.3",
-            "nextflow": "25.10.3"
+            "nextflow": "25.04.0"
         },
-        "timestamp": "2026-03-11T19:07:03.529718053"
+        "timestamp": "2026-03-12T17:51:11.000000000"
     }
 }
