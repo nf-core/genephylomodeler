@@ -37,6 +37,9 @@
                 "absrel",
                 "absrel/KSR2_ABSREL.json",
                 "absrel/KSR2_ABSREL_output.txt",
+                "bgm",
+                "bgm/KSR2_BGM.json",
+                "bgm/KSR2_BGM_output.txt",
                 "busted",
                 "busted/KSR2_BUSTED.json",
                 "busted/KSR2_BUSTED_output.txt",
@@ -49,11 +52,6 @@
                 "gard",
                 "gard/KSR2_GARD.json",
                 "gard/KSR2_GARD_output.txt",
-                "hyphy",
-                "hyphy/KSR2_BGM.json",
-                "hyphy/KSR2_BGM_output.txt",
-                "hyphy/KSR2_SLAC.json",
-                "hyphy/KSR2_SLAC_output.txt",
                 "meme",
                 "meme/KSR2_MEME.json",
                 "meme/KSR2_MEME_output.txt",
@@ -61,7 +59,10 @@
                 "pipeline_info/nf_core_genephylomodeler_software_mqc_versions.yml",
                 "relax",
                 "relax/KSR2_RELAX.json",
-                "relax/KSR2_RELAX_output.txt"
+                "relax/KSR2_RELAX_output.txt",
+                "slac",
+                "slac/KSR2_SLAC.json",
+                "slac/KSR2_SLAC_output.txt"
             ],
             []
         ],

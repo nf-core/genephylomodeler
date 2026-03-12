@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/nf-core/modules/master/subworkflows/yaml-schema.json
+name: "utils_nfcore_genephylomodeler_pipeline"
+description: Subworkflow with utility functions specific to the nf-core/genephylomodeler pipeline
+keywords:
+  - utility
+  - pipeline
+  - initialise
+components: []
+input:
+  - version:
+      type: boolean
+      description: |
+        Display version and exit
+  - validate_params:
+      type: boolean
+      description: |
+        Boolean whether to validate parameters against the schema at runtime
+  - monochrome_logs:
+      type: boolean
+      description: |
+        Do not use coloured log outputs
+  - nextflow_cli_args:
+      type: list
+      description: |
+        List of positional nextflow CLI args
+  - outdir:
+      type: string
+      description: |
+        The output directory where the results will be saved
+  - input:
+      type: string
+      description: |
+        Path to input samplesheet
+output:
+  - samplesheet:
+      type: channel
+      description: |
+        Channel containing the parsed samplesheet
+  - versions:
+      type: channel
+      description: |
+        Channel containing software versions
+authors:
+  - "@areebapatel"
+maintainers:
+  - "@areebapatel"
