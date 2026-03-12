@@ -17,7 +17,7 @@ include { softwareVersionsToYAML  } from '../subworkflows/nf-core/utils_nfcore_p
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-workflow PHYLOANALYSIS {
+workflow GENEPHYLOMODELER {
 
     take:
     ch_samplesheet // channel: [ val(meta), path(alignment), path(tree) ]
@@ -83,7 +83,7 @@ workflow PHYLOANALYSIS {
     softwareVersionsToYAML(ch_versions)
         .collectFile(
             storeDir: "${params.outdir}/pipeline_info",
-            name: 'nf_core_'  +  'phyloanalysis_software_'  + 'mqc_'  + 'versions.yml',
+            name: 'nf_core_'  +  'genephylomodeler_software_'  + 'mqc_'  + 'versions.yml',
             sort: true,
             newLine: true
         ).set { ch_collated_versions }

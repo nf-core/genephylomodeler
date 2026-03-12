@@ -1,4 +1,4 @@
-# nf-core/phyloanalysis: Output
+# nf-core/genephylomodeler: Output
 
 ## Introduction
 

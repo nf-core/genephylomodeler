@@ -6,7 +6,7 @@ lint: {}
 
 template:
   org: nf-core
-  name: phyloanalysis
+  name: genephylomodeler
   description: Selection analysis using phylogenetics
   author: Nina Xiong
   version: 1.0.0dev

@@ -6,7 +6,7 @@
                     "hyphy": "2.5.96(MP)"
                 },
                 "Workflow": {
-                    "nf-core/phyloanalysis": "v1.0.0dev"
+                    "nf-core/genephylomodeler": "v1.0.0dev"
                 }
             },
             [
@@ -14,7 +14,7 @@
                 "absrel/KSR2_ABSREL.json",
                 "absrel/KSR2_ABSREL_output.txt",
                 "pipeline_info",
-                "pipeline_info/nf_core_phyloanalysis_software_mqc_versions.yml"
+                "pipeline_info/nf_core_genephylomodeler_software_mqc_versions.yml"
             ],
             [
                 "KSR2_ABSREL.json:md5,93a862faed1f3e647e4560bad4df8356",

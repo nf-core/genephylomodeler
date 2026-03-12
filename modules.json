@@ -1,6 +1,6 @@
 {
-    "name": "nf-core/phyloanalysis",
-    "homePage": "https://github.com/nf-core/phyloanalysis",
+    "name": "nf-core/genephylomodeler",
+    "homePage": "https://github.com/nf-core/genephylomodeler",
     "repos": {
         "https://github.com/nf-core/modules.git": {
             "modules": {
