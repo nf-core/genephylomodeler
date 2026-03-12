@@ -76,7 +76,8 @@ workflow GENEPHYLOMODELER {
     //
     HYPHY_FUBAR ( ch_branched.fubar )
     ch_versions = ch_versions.mix(HYPHY_FUBAR.out.versions.first())
-    
+
+    //
     // MODULE: GARD - Genetic Algorithm for Recombination Detection
     //
     HYPHY_GARD ( ch_branched.gard )

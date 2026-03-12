@@ -14,6 +14,12 @@
                 "HYPHY_FEL": {
                     "hyphy": "2.5.96(MP)"
                 },
+                "HYPHY_FUBAR": {
+                    "hyphy": "2.5.96(MP)"
+                },
+                "HYPHY_GARD": {
+                    "hyphy": "2.5.96(MP)"
+                },
                 "HYPHY_MEME": {
                     "hyphy": "2.5.96(MP)"
                 },
@@ -37,6 +43,12 @@
                 "fel",
                 "fel/KSR2_FEL.json",
                 "fel/KSR2_FEL_output.txt",
+                "fubar",
+                "fubar/KSR2_FUBAR.json",
+                "fubar/KSR2_FUBAR_output.txt",
+                "gard",
+                "gard/KSR2_GARD.json",
+                "gard/KSR2_GARD_output.txt",
                 "hyphy",
                 "hyphy/KSR2_BGM.json",
                 "hyphy/KSR2_BGM_output.txt",
