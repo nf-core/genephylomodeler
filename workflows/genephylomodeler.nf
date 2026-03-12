@@ -4,6 +4,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 include { HYPHY_ABSREL            } from '../modules/local/hyphy_absrel/main'
+include { HYPHY_BGM            } from '../modules/local/hyphy_bgm/main'
 include { HYPHY_BUSTED            } from '../modules/local/hyphy_busted/main'
 include { HYPHY_FEL               } from '../modules/local/hyphy_fel/main'
 include { HYPHY_MEME              } from '../modules/local/hyphy_meme/main'
@@ -33,6 +34,7 @@ workflow GENEPHYLOMODELER {
         .branch {
             meta, alignment, tree ->
                 absrel: meta.suite == 'hyphy' && meta.tool == 'absrel'
+                bgm: meta.suite == 'hyphy' && meta.tool == 'bgm'
                 busted: meta.suite == 'hyphy' && meta.tool == 'busted'
                 fel:    meta.suite == 'hyphy' && meta.tool == 'fel'
                 meme:   meta.suite == 'hyphy' && meta.tool == 'meme'
@@ -46,6 +48,12 @@ workflow GENEPHYLOMODELER {
     //
     HYPHY_ABSREL ( ch_branched.absrel )
     ch_versions = ch_versions.mix(HYPHY_ABSREL.out.versions.first())
+
+    //
+    // MODULE: BGM - Bayesian Graphical Model
+    //
+    HYPHY_BGM ( ch_branched.bgm )
+    ch_versions = ch_versions.mix(HYPHY_BGM.out.versions.first())
 
     //
     // MODULE: BUSTED - Branch-Site Unrestricted Statistical Test
