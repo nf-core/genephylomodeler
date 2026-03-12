@@ -21,7 +21,7 @@
 
 ## Introduction
 
-**nf-core/genephylomodeler** is a bioinformatics pipeline that fits evolutionary models and performs hypothesis testing on multiple sequence alignments of coding genes. These include (but are not limited to) detecting signatures of selection and estimating evolutionary rates using phylogenetic methodologies from HyPhy, PAML, and more. The pipeline takes a samplesheet with alignment files and phylogenetic trees as input, applies one or more tools of interest, and produces an output in JSON and text format.
+**nf-core/genephylomodeler** is a bioinformatics pipeline that fits evolutionary models and performs hypothesis testing on multiple sequence alignments of coding genes. These include (but are not limited to) detecting signatures of selection and estimating evolutionary rates using methods from HyPhy, PAML, and more. The pipeline takes a samplesheet with alignment files and phylogenetic trees as input, applies one or more tools of interest, and produces an output in JSON and text format.
 
 1. Adaptive Branch-Site Random Effects Likelihood ([`aBSREL`](https://www.hyphy.org/methods/selection-methods/#absrel))
 2. Bayesian Graphical Model ([`BGM`](https://www.hyphy.org/methods/selection-methods/#bgm))
