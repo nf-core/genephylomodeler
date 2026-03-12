@@ -3,10 +3,10 @@ repository_type: pipeline
 nf_core_version: 3.4.1
 
 lint:
-    files_unchanged:
-        - assets/nf-core-genephylomodeler_logo_light.png
-        - docs/images/nf-core-genephylomodeler_logo_light.png
-        - docs/images/nf-core-genephylomodeler_logo_dark.png
+  files_unchanged:
+    - assets/nf-core-genephylomodeler_logo_light.png
+    - docs/images/nf-core-genephylomodeler_logo_light.png
+    - docs/images/nf-core-genephylomodeler_logo_dark.png
 
 template:
   org: nf-core
