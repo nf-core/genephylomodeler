@@ -18,9 +18,25 @@
 
   > Smith MD, Wertheim JO, Weaver S, Murrell B, Scheffler K, Kosakovsky Pond SL. Less is more: an adaptive branch-site random effects model for efficient detection of episodic diversifying selection. Mol Biol Evol. 2015 May;32(5):1342-53. doi: 10.1093/molbev/msv022. Epub 2015 Feb 19. PMID: 25697341; PMCID: PMC4408413.
 
+- [BGM](https://pubmed.ncbi.nlm.nih.gov/18039027/)
+
+  > Poon AF, Lewis FI, Pond SL, Frost SD. An evolutionary-network model reveals stratified interactions in the V3 loop of the HIV-1 envelope. PLoS Comput Biol. 2007 Nov;3(11):e231. doi: 10.1371/journal.pcbi.0030231. Epub 2007 Oct 11. PMID: 18039027; PMCID: PMC2082504.
+
 - [BUSTED](https://pubmed.ncbi.nlm.nih.gov/25701167/)
 
   > Murrell B, Weaver S, Smith MD, Wertheim JO, Murrell S, Aylward A, Eren K, Pollner T, Martin DP, Smith DM, Scheffler K, Kosakovsky Pond SL. Gene-wide identification of episodic selection. Mol Biol Evol. 2015 May;32(5):1365-71. doi: 10.1093/molbev/msv035. Epub 2015 Feb 19. PMID: 25701167; PMCID: PMC4408417.
+
+- [FEL and SLAC](https://pubmed.ncbi.nlm.nih.gov/15703242/)
+
+  > Kosakovsky Pond SL, Frost SD. Not so different after all: a comparison of methods for detecting amino acid sites under selection. Mol Biol Evol. 2005 May;22(5):1208-22. doi: 10.1093/molbev/msi105. Epub 2005 Feb 9. PMID: 15703242.
+
+- [FUBAR](https://pubmed.ncbi.nlm.nih.gov/23420840/)
+
+  > Murrell B, Moola S, Mabona A, Weighill T, Sheward D, Kosakovsky Pond SL, Scheffler K. FUBAR: a fast, unconstrained bayesian approximation for inferring selection. Mol Biol Evol. 2013 May;30(5):1196-205. doi: 10.1093/molbev/mst030. Epub 2013 Feb 18. PMID: 23420840; PMCID: PMC3670733.
+
+- [GARD](https://pubmed.ncbi.nlm.nih.gov/16818476/)
+
+  > Kosakovsky Pond SL, Posada D, Gravenor MB, Woelk CH, Frost SD. Automated phylogenetic detection of recombination using a genetic algorithm. Mol Biol Evol. 2006 Oct;23(10):1891-901. doi: 10.1093/molbev/msl051. Epub 2006 Jul 3. PMID: 16818476.
 
 - [MEME](https://pubmed.ncbi.nlm.nih.gov/22807683/)
 

@@ -26,13 +26,13 @@ TRIM5,/path/to/trim5.fna,/path/to/trim5.tree,hyphy,meme
 MX1,/path/to/mx1.fna,/path/to/mx1_labeled.tree,hyphy,relax
 ```
 
-| Column      | Description                                                                                            |
-| ----------- | ------------------------------------------------------------------------------------------------------ |
-| `gene_name` | Gene identifier used for naming output files. Spaces are automatically converted to underscores (`_`). |
-| `alignment` | Full path to the multiple sequence alignment file (FASTA nucleotide format).                           |
-| `tree`      | Full path to the Newick tree file. Some tools (BUSTED, RELAX) require labeled branches.                |
-| `suite`     | The software suite to use (currently: `hyphy`).                                                        |
-| `tool`      | The analysis method to run: `absrel`, `busted`, `meme`, or `relax`.                                    |
+| Column      | Description                                                                                                        |
+| ----------- | ------------------------------------------------------------------------------------------------------------------ |
+| `gene_name` | Gene identifier used for naming output files. Spaces are automatically converted to underscores (`_`).             |
+| `alignment` | Full path to the multiple sequence alignment file (FASTA nucleotide format).                                       |
+| `tree`      | Full path to the Newick tree file. Some tools (BUSTED, RELAX) require labeled branches.                            |
+| `suite`     | The software suite to use (currently: `hyphy`).                                                                    |
+| `tool`      | The analysis method to run: `absrel`, `bgm`, `busted`, `fade`, `fel`, `fubar`, `gard`, `meme`, `relax`, or `slac`. |
 
 An [example samplesheet](../tests/data/samplesheet_test.csv) has been provided with the pipeline.
 

@@ -32,10 +32,10 @@
             },
             "tool": {
                 "type": "string",
-                "enum": ["absrel", "bgm", "busted", "fel", "fubar", "meme", "relax", "slac"],
-                "errorMessage": "Tool must be one of: absrel, bgm, busted, fel, fubar, meme, relax, slac"
+                "enum": ["absrel", "bgm", "busted", "fel", "fubar", "gard", "meme", "relax", "slac"],
+                "errorMessage": "Tool must be one of: absrel, bgm, busted, fel, gard, meme, relax, slac"
             }
         },
-        "required": ["gene_name", "alignment", "tree", "suite", "tool"]
+        "required": ["gene_name", "alignment", "suite", "tool"]
     }
 }
