@@ -7,6 +7,7 @@ include { HYPHY_ABSREL            } from '../modules/local/hyphy_absrel/main'
 include { HYPHY_BGM            } from '../modules/local/hyphy_bgm/main'
 include { HYPHY_BUSTED            } from '../modules/local/hyphy_busted/main'
 include { HYPHY_FEL               } from '../modules/local/hyphy_fel/main'
+include { HYPHY_GARD               } from '../modules/local/hyphy_gard/main'
 include { HYPHY_MEME              } from '../modules/local/hyphy_meme/main'
 include { HYPHY_RELAX             } from '../modules/local/hyphy_relax/main'
 include { HYPHY_SLAC             } from '../modules/local/hyphy_slac/main'
@@ -37,6 +38,7 @@ workflow GENEPHYLOMODELER {
                 bgm: meta.suite == 'hyphy' && meta.tool == 'bgm'
                 busted: meta.suite == 'hyphy' && meta.tool == 'busted'
                 fel:    meta.suite == 'hyphy' && meta.tool == 'fel'
+                gard:    meta.suite == 'hyphy' && meta.tool == 'gard'
                 meme:   meta.suite == 'hyphy' && meta.tool == 'meme'
                 relax:  meta.suite == 'hyphy' && meta.tool == 'relax'
                 slac:  meta.suite == 'hyphy' && meta.tool == 'slac'
@@ -66,6 +68,12 @@ workflow GENEPHYLOMODELER {
     //
     HYPHY_FEL ( ch_branched.fel )
     ch_versions = ch_versions.mix(HYPHY_FEL.out.versions.first())
+
+    //
+    // MODULE: GARD - Genetic Algorithm for Recombination Detection
+    //
+    HYPHY_GARD ( ch_branched.gard )
+    ch_versions = ch_versions.mix(HYPHY_GARD.out.versions.first())
 
     //
     // MODULE: MEME - Mixed Effects Model of Evolution
