@@ -2,74 +2,22 @@
     "-profile test": {
         "content": [
             {
-                "HYPHY_ABSREL": {
-                    "hyphy": "2.5.96(MP)"
-                },
-                "HYPHY_BGM": {
-                    "hyphy": "2.5.96(MP)"
-                },
-                "HYPHY_BUSTED": {
-                    "hyphy": "2.5.96(MP)"
-                },
-                "HYPHY_FEL": {
-                    "hyphy": "2.5.96(MP)"
-                },
-                "HYPHY_FUBAR": {
-                    "hyphy": "2.5.96(MP)"
-                },
-                "HYPHY_GARD": {
-                    "hyphy": "2.5.96(MP)"
-                },
-                "HYPHY_MEME": {
-                    "hyphy": "2.5.96(MP)"
-                },
-                "HYPHY_RELAX": {
-                    "hyphy": "2.5.96(MP)"
-                },
-                "HYPHY_SLAC": {
-                    "hyphy": "2.5.96(MP)"
-                },
                 "Workflow": {
                     "nf-core/genephylomodeler": "v1.0.0dev"
                 }
             },
             [
-                "absrel",
-                "absrel/KSR2_ABSREL.json",
-                "absrel/KSR2_ABSREL_output.txt",
-                "bgm",
-                "bgm/KSR2_BGM.json",
-                "bgm/KSR2_BGM_output.txt",
-                "busted",
-                "busted/KSR2_BUSTED.json",
-                "busted/KSR2_BUSTED_output.txt",
-                "fel",
-                "fel/KSR2_FEL.json",
-                "fel/KSR2_FEL_output.txt",
-                "fubar",
-                "fubar/KSR2_FUBAR.json",
-                "fubar/KSR2_FUBAR_output.txt",
-                "gard",
-                "gard/KSR2_GARD.json",
-                "gard/KSR2_GARD_output.txt",
-                "meme",
-                "meme/KSR2_MEME.json",
-                "meme/KSR2_MEME_output.txt",
                 "pipeline_info",
-                "pipeline_info/nf_core_genephylomodeler_software_mqc_versions.yml",
-                "relax",
-                "relax/KSR2_RELAX.json",
-                "relax/KSR2_RELAX_output.txt",
-                "slac",
-                "slac/KSR2_SLAC.json",
-                "slac/KSR2_SLAC_output.txt"
+                "pipeline_info/nf_core_genephylomodeler_software_mqc_versions.yml"
             ],
-            []
+            [
+                
+            ]
         ],
         "meta": {
             "nf-test": "0.9.3",
-            "nextflow": "25.04.0"
+            "nextflow": "25.04.6"
         },
-        "timestamp": "2026-03-12T17:51:11.000000000"
+        "timestamp": "2026-03-13T13:33:20.520993"
     }
 }

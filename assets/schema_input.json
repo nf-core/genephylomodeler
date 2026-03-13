@@ -16,8 +16,8 @@
             "alignment": {
                 "type": "string",
                 "format": "file-path",
-                "pattern": "^\\S+\\.(fna|fasta|fa|fas|nex|nxs|phy|aln)$",
-                "errorMessage": "Alignment file must have a valid extension (.fna, .fasta, .fa, .fas, .nex, .nxs, .phy, .aln)"
+                "pattern": "^\\S+\\.(fna|faa|fasta|fa|fas|nex|nxs|phy|aln)$",
+                "errorMessage": "Alignment file must have a valid extension (.fna, .faa, .fasta, .fa, .fas, .nex, .nxs, .phy, .aln)"
             },
             "tree": {
                 "type": "string",

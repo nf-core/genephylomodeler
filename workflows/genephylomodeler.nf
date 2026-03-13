@@ -4,15 +4,15 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 include { HYPHY_ABSREL            } from '../modules/local/hyphy_absrel/main'
-include { HYPHY_BGM            } from '../modules/local/hyphy_bgm/main'
+include { HYPHY_BGM               } from '../modules/local/hyphy_bgm/main'
 include { HYPHY_BUSTED            } from '../modules/local/hyphy_busted/main'
 include { HYPHY_FEL               } from '../modules/local/hyphy_fel/main'
 include { HYPHY_FUBAR             } from '../modules/local/hyphy_fubar/main'
-include { HYPHY_GARD               } from '../modules/local/hyphy_gard/main'
+include { HYPHY_GARD              } from '../modules/local/hyphy_gard/main'
 include { HYPHY_MEME              } from '../modules/local/hyphy_meme/main'
-include { HYPHY_FADE            } from '../modules/local/hyphy_fade/main'
+include { HYPHY_FADE              } from '../modules/local/hyphy_fade/main'
 include { HYPHY_RELAX             } from '../modules/local/hyphy_relax/main'
-include { HYPHY_SLAC             } from '../modules/local/hyphy_slac/main'
+include { HYPHY_SLAC              } from '../modules/local/hyphy_slac/main'
 include { softwareVersionsToYAML  } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 
 /*
