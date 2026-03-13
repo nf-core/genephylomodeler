@@ -32,7 +32,7 @@
             },
             "tool": {
                 "type": "string",
-                "enum": ["absrel", "bgm", "busted", "fel", "gard", "meme", "relax", "slac"],
+                "enum": ["absrel", "bgm", "busted", "fel", "fubar", "gard", "meme", "relax", "slac"],
                 "errorMessage": "Tool must be one of: absrel, bgm, busted, fel, gard, meme, relax, slac"
             }
         },
