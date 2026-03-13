@@ -21,7 +21,7 @@
 
 ## Introduction
 
-**nf-core/genephylomodeler** is a bioinformatics pipeline that fits evolutionary models and performs hypothesis testing on multiple sequence alignments. These include (but are not limited to) detecting signatures of selection, estimating evolutionary rates, and comparing different evolutionary models. The pipeline takes a samplesheet with alignment files and phylogenetic trees as input, applies one or more tools of interest, and produces an output in CSV format.
+**nf-core/genephylomodeler** is a bioinformatics pipeline that fits evolutionary models and performs hypothesis testing on multiple sequence alignments of coding genes. These include (but are not limited to) detecting signatures of selection and estimating evolutionary rates using methods from HyPhy, PAML, and other packages. The pipeline takes a samplesheet with alignment files and phylogenetic trees as input, applies one or more tools of interest, and produces an output in JSON and text format.
 
 1. Adaptive Branch-Site Random Effects Likelihood ([`aBSREL`](https://www.hyphy.org/methods/selection-methods/#absrel))
 2. Bayesian Graphical Model ([`BGM`](https://www.hyphy.org/methods/selection-methods/#bgm))
@@ -45,14 +45,15 @@ First, prepare a samplesheet with your input data that looks as follows:
 
 ```csv
 gene_name,alignment,tree,suite,tool
-KSR2,tests/data/ksr2.fna,tests/data/ksr2.tree,hyphy,absrel
+KSR2,/path/to/ksr2.fna,/path/to/ksr2.tree,hyphy,absrel
+KSR2,/path/to/ksr2.fna,/path/to/ksr2.tree,hyphy,busted
+TRIM5,/path/to/trim5.fna,/path/to/trim5.tree,hyphy,meme
+MX1,/path/to/mx1.fna,/path/to/mx1_labeled.tree,hyphy,relax
 ```
 
 Each row represents a multiple sequence alignment for a gene.
 
 Now, you can run the pipeline using:
-
-<!-- TODO nf-core: update the following command to include all required parameters for a minimal example -->
 
 ```bash
 nextflow run nf-core/genephylomodeler \
@@ -76,9 +77,7 @@ For more details about the output files and reports, please refer to the
 
 nf-core/genephylomodeler was originally written by Nina Xiong.
 
-We thank the following people for their extensive assistance in the development of this pipeline:
-
-<!-- TODO nf-core: If applicable, make list of people who have also contributed -->
+We thank the following people for their extensive assistance in the development of this pipeline: Areeba Rahu, Nuha Kadak
 
 ## Contributions and Support
 
