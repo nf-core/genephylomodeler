@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/nf-core/phyloanalysis/master/assets/schema_input.json",
-    "title": "nf-core/phyloanalysis pipeline - params.input schema",
+    "$id": "https://raw.githubusercontent.com/nf-core/genephylomodeler/master/assets/schema_input.json",
+    "title": "nf-core/genephylomodeler pipeline - params.input schema",
     "description": "Schema for the file provided with params.input",
     "type": "array",
     "items": {
@@ -16,12 +16,14 @@
             "alignment": {
                 "type": "string",
                 "format": "file-path",
-                "errorMessage": "Alignment file must be provided and cannot contain spaces"
+                "pattern": "^\\S+\\.(fna|fasta|fa|fas|nex|nxs|phy|aln)$",
+                "errorMessage": "Alignment file must have a valid extension (.fna, .fasta, .fa, .fas, .nex, .nxs, .phy, .aln)"
             },
             "tree": {
                 "type": "string",
                 "format": "file-path",
-                "errorMessage": "Tree file must be provided and cannot contain spaces"
+                "pattern": "^\\S+\\.(tree|tre|nwk|newick|nex|nxs)$",
+                "errorMessage": "Tree file must have a valid extension (.tree, .tre, .nwk, .newick, .nex, .nxs)"
             },
             "suite": {
                 "type": "string",
@@ -30,10 +32,10 @@
             },
             "tool": {
                 "type": "string",
-                "enum": ["absrel", "busted", "meme", "relax", "fade"],
-                "errorMessage": "Tool must be one of: absrel, busted, meme, relax, fade"
+                "enum": ["absrel", "bgm", "busted", "fade", "fel", "fubar", "gard", "meme", "relax", "slac"],
+                "errorMessage": "Tool must be one of: absrel, bgm, busted, fade, fel, gard, meme, relax, slac"
             }
         },
-        "required": ["gene_name", "alignment", "tree", "suite", "tool"]
+        "required": ["gene_name", "alignment", "suite", "tool"]
     }
 }

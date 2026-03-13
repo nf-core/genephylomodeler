@@ -1,11 +1,11 @@
 #!/usr/bin/env nextflow
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    nf-core/phyloanalysis
+    nf-core/genephylomodeler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Github : https://github.com/nf-core/phyloanalysis
-    Website: https://nf-co.re/phyloanalysis
-    Slack  : https://nfcore.slack.com/channels/phyloanalysis
+    Github : https://github.com/nf-core/genephylomodeler
+    Website: https://nf-co.re/genephylomodeler
+    Slack  : https://nfcore.slack.com/channels/genephylomodeler
 ----------------------------------------------------------------------------------------
 */
 
@@ -15,9 +15,9 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { PHYLOANALYSIS  } from './workflows/phyloanalysis'
-include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_phyloanalysis_pipeline'
-include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_phyloanalysis_pipeline'
+include { GENEPHYLOMODELER  } from './workflows/genephylomodeler'
+include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_genephylomodeler_pipeline'
+include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_genephylomodeler_pipeline'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,7 +28,7 @@ include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_phyl
 //
 // WORKFLOW: Run main analysis pipeline depending on type of input
 //
-workflow NFCORE_PHYLOANALYSIS {
+workflow NFCORE_GENEPHYLOMODELER {
 
     take:
     samplesheet // channel: samplesheet read in from --input
@@ -38,7 +38,7 @@ workflow NFCORE_PHYLOANALYSIS {
     //
     // WORKFLOW: Run pipeline
     //
-    PHYLOANALYSIS (
+    GENEPHYLOMODELER (
         samplesheet
     )
 }
@@ -69,7 +69,7 @@ workflow {
     //
     // WORKFLOW: Run main workflow
     //
-    NFCORE_PHYLOANALYSIS (
+    NFCORE_GENEPHYLOMODELER (
         PIPELINE_INITIALISATION.out.samplesheet
     )
     //
