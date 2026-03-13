@@ -6,6 +6,7 @@
 include { HYPHY_ABSREL            } from '../modules/local/hyphy_absrel/main'
 include { HYPHY_BUSTED            } from '../modules/local/hyphy_busted/main'
 include { HYPHY_MEME              } from '../modules/local/hyphy_meme/main'
+include { HYPHY_FADE            } from '../modules/local/hyphy_fade/main'
 include { HYPHY_RELAX             } from '../modules/local/hyphy_relax/main'
 include { softwareVersionsToYAML  } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 
@@ -34,6 +35,7 @@ workflow PHYLOANALYSIS {
                 busted: meta.suite == 'hyphy' && meta.tool == 'busted'
                 meme:   meta.suite == 'hyphy' && meta.tool == 'meme'
                 relax:  meta.suite == 'hyphy' && meta.tool == 'relax'
+                fade:   meta.suite == 'hyphy' && meta.tool == 'fade'
         }
         .set { ch_branched }
 
@@ -60,6 +62,12 @@ workflow PHYLOANALYSIS {
     //
     HYPHY_RELAX ( ch_branched.relax )
     ch_versions = ch_versions.mix(HYPHY_RELAX.out.versions.first())
+
+    //
+    // MODULE: FADE - FUBAR Approach to Directional Evolution
+    //
+    HYPHY_FADE ( ch_branched.fade )
+    ch_versions = ch_versions.mix(HYPHY_FADE.out.versions.first())
 
     //
     // Collate and save software versions
