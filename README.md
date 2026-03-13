@@ -23,16 +23,24 @@
 
 **nf-core/genephylomodeler** is a bioinformatics pipeline that fits evolutionary models and performs hypothesis testing on multiple sequence alignments of coding genes. These include (but are not limited to) detecting signatures of selection and estimating evolutionary rates using methods from HyPhy, PAML, and other packages. The pipeline takes a samplesheet with alignment files and phylogenetic trees as input, applies one or more tools of interest, and produces an output in JSON and text format.
 
-1. Adaptive Branch-Site Random Effects Likelihood ([`aBSREL`](https://www.hyphy.org/methods/selection-methods/#absrel))
-2. Bayesian Graphical Model ([`BGM`](https://www.hyphy.org/methods/selection-methods/#bgm))
-3. Branch-Site Unrestricted Statistical Test for Episodic Diversification ([`BUSTED`](https://www.hyphy.org/methods/selection-methods/#busted))
-4. FUBAR Aproach to Directional Evolution ([`FADE`](https://www.hyphy.org/methods/selection-methods/#fade))
-5. Fixed Effects Likelihood ([`FEL`](https://www.hyphy.org/methods/selection-methods/#fel))
-6. Fast, Unconstrained Bayesian AppRoximation ([`FUBAR`](https://www.hyphy.org/methods/selection-methods/#fubar))
-7. Genetic Algorithm for Recombination Detection ([`GARD`](https://www.hyphy.org/methods/selection-methods/#gard))
-8. Mixed Effects Model of Evolution ([`MEME`](https://www.hyphy.org/methods/selection-methods/#meme))
-9. Test for Relaxation or Intensification of Selection ([`RELAX`](https://www.hyphy.org/methods/selection-methods/#relax))
-10. Single-Likelihood Ancestor Counting ([`SLAC`](https://www.hyphy.org/methods/selection-methods/#slac))
+<h1>
+  <picture>
+    <img alt="workflow-diagram" src="docs/images/genephylomodelerWorkflowDiagram.png">
+  </picture>
+</h1>
+
+The pipeline currently supports the following tools from HyPhy:
+
+- Adaptive Branch-Site Random Effects Likelihood ([`aBSREL`](https://www.hyphy.org/methods/selection-methods/#absrel))
+- Bayesian Graphical Model ([`BGM`](https://www.hyphy.org/methods/selection-methods/#bgm))
+- Branch-Site Unrestricted Statistical Test for Episodic Diversification ([`BUSTED`](https://www.hyphy.org/methods/selection-methods/#busted))
+- FUBAR Aproach to Directional Evolution ([`FADE`](https://www.hyphy.org/methods/selection-methods/#fade))
+- Fixed Effects Likelihood ([`FEL`](https://www.hyphy.org/methods/selection-methods/#fel))
+- Fast, Unconstrained Bayesian AppRoximation ([`FUBAR`](https://www.hyphy.org/methods/selection-methods/#fubar))
+- Genetic Algorithm for Recombination Detection ([`GARD`](https://www.hyphy.org/methods/selection-methods/#gard))
+- Mixed Effects Model of Evolution ([`MEME`](https://www.hyphy.org/methods/selection-methods/#meme))
+- Test for Relaxation or Intensification of Selection ([`RELAX`](https://www.hyphy.org/methods/selection-methods/#relax))
+- Single-Likelihood Ancestor Counting ([`SLAC`](https://www.hyphy.org/methods/selection-methods/#slac))
 
 ## Usage
 
