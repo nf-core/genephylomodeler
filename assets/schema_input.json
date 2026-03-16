@@ -16,8 +16,8 @@
             "alignment": {
                 "type": "string",
                 "format": "file-path",
-                "pattern": "^\\S+\\.(fna|fasta|fa|fas|nex|nxs|phy|aln)$",
-                "errorMessage": "Alignment file must have a valid extension (.fna, .fasta, .fa, .fas, .nex, .nxs, .phy, .aln)"
+                "pattern": "^\\S+\\.(fna|faa|fasta|fa|fas|nex|nxs|phy|aln)$",
+                "errorMessage": "Alignment file must have a valid extension (.fna, .faa, .fasta, .fa, .fas, .nex, .nxs, .phy, .aln)"
             },
             "tree": {
                 "type": "string",
@@ -32,8 +32,8 @@
             },
             "tool": {
                 "type": "string",
-                "enum": ["absrel", "bgm", "busted", "fel", "fubar", "gard", "meme", "relax", "slac"],
-                "errorMessage": "Tool must be one of: absrel, bgm, busted, fel, gard, meme, relax, slac"
+                "enum": ["absrel", "bgm", "busted", "fade", "fel", "fubar", "gard", "meme", "relax", "slac"],
+                "errorMessage": "Tool must be one of: absrel, bgm, busted, fade, fel, gard, meme, relax, slac"
             }
         },
         "required": ["gene_name", "alignment", "suite", "tool"]

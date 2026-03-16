@@ -11,6 +11,9 @@
                 "HYPHY_BUSTED": {
                     "hyphy": "2.5.96(MP)"
                 },
+                "HYPHY_FADE": {
+                    "hyphy": "2.5.96(MP)"
+                },
                 "HYPHY_FEL": {
                     "hyphy": "2.5.96(MP)"
                 },
@@ -43,6 +46,9 @@
                 "busted",
                 "busted/KSR2_BUSTED.json",
                 "busted/KSR2_BUSTED_output.txt",
+                "fade",
+                "fade/KSR2_FADE.json",
+                "fade/KSR2_FADE_output.txt",
                 "fel",
                 "fel/KSR2_FEL.json",
                 "fel/KSR2_FEL_output.txt",
@@ -64,12 +70,14 @@
                 "slac/KSR2_SLAC.json",
                 "slac/KSR2_SLAC_output.txt"
             ],
-            []
+            [
+                
+            ]
         ],
         "meta": {
             "nf-test": "0.9.3",
-            "nextflow": "25.04.0"
+            "nextflow": "25.04.6"
         },
-        "timestamp": "2026-03-12T17:51:11.000000000"
+        "timestamp": "2026-03-16T11:49:07.668487"
     }
 }

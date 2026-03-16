@@ -4,14 +4,15 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 include { HYPHY_ABSREL            } from '../modules/local/hyphy_absrel/main'
-include { HYPHY_BGM            } from '../modules/local/hyphy_bgm/main'
+include { HYPHY_BGM               } from '../modules/local/hyphy_bgm/main'
 include { HYPHY_BUSTED            } from '../modules/local/hyphy_busted/main'
 include { HYPHY_FEL               } from '../modules/local/hyphy_fel/main'
 include { HYPHY_FUBAR             } from '../modules/local/hyphy_fubar/main'
-include { HYPHY_GARD               } from '../modules/local/hyphy_gard/main'
+include { HYPHY_GARD              } from '../modules/local/hyphy_gard/main'
 include { HYPHY_MEME              } from '../modules/local/hyphy_meme/main'
+include { HYPHY_FADE              } from '../modules/local/hyphy_fade/main'
 include { HYPHY_RELAX             } from '../modules/local/hyphy_relax/main'
-include { HYPHY_SLAC             } from '../modules/local/hyphy_slac/main'
+include { HYPHY_SLAC              } from '../modules/local/hyphy_slac/main'
 include { softwareVersionsToYAML  } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 
 /*
@@ -36,14 +37,15 @@ workflow GENEPHYLOMODELER {
         .branch {
             meta, alignment, tree ->
                 absrel: meta.suite == 'hyphy' && meta.tool == 'absrel'
-                bgm: meta.suite == 'hyphy' && meta.tool == 'bgm'
+                bgm:    meta.suite == 'hyphy' && meta.tool == 'bgm'
                 busted: meta.suite == 'hyphy' && meta.tool == 'busted'
+                fade:   meta.suite == 'hyphy' && meta.tool == 'fade'
                 fel:    meta.suite == 'hyphy' && meta.tool == 'fel'
                 fubar:  meta.suite == 'hyphy' && meta.tool == 'fubar'
-                gard:    meta.suite == 'hyphy' && meta.tool == 'gard'
+                gard:   meta.suite == 'hyphy' && meta.tool == 'gard'
                 meme:   meta.suite == 'hyphy' && meta.tool == 'meme'
                 relax:  meta.suite == 'hyphy' && meta.tool == 'relax'
-                slac:  meta.suite == 'hyphy' && meta.tool == 'slac'
+                slac:   meta.suite == 'hyphy' && meta.tool == 'slac'
         }
         .set { ch_branched }
 
@@ -64,6 +66,12 @@ workflow GENEPHYLOMODELER {
     //
     HYPHY_BUSTED ( ch_branched.busted )
     ch_versions = ch_versions.mix(HYPHY_BUSTED.out.versions.first())
+
+    //
+    // MODULE: FADE - FUBAR Approach to Directional Evolution
+    //
+    HYPHY_FADE ( ch_branched.fade )
+    ch_versions = ch_versions.mix(HYPHY_FADE.out.versions.first())
 
     //
     // MODULE: FEL - Fixed Effects Likelihood
@@ -95,7 +103,6 @@ workflow GENEPHYLOMODELER {
     HYPHY_RELAX ( ch_branched.relax )
     ch_versions = ch_versions.mix(HYPHY_RELAX.out.versions.first())
 
-    //
     // MODULE: SLAC - Single-Likelihood Ancestor Counting
     //
     HYPHY_SLAC ( ch_branched.slac )
