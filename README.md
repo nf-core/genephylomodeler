@@ -85,7 +85,7 @@ For more details about the output files and reports, please refer to the
 
 nf-core/genephylomodeler was originally written by Nina Xiong.
 
-We thank the following people for their extensive assistance in the development of this pipeline: 
+We thank the following people for their extensive assistance in the development of this pipeline:
 - Areeba Rahu
 - Nuha Kadak
 
