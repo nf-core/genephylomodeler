@@ -85,7 +85,10 @@ For more details about the output files and reports, please refer to the
 
 nf-core/genephylomodeler was originally written by Nina Xiong.
 
-We thank the following people for their extensive assistance in the development of this pipeline: Areeba Rahu, Nuha Kadak
+We thank the following people for their extensive assistance in the development of this pipeline:
+
+- Areeba Rahu
+- Nuha Kadak
 
 ## Contributions and Support
 
@@ -97,6 +100,8 @@ For further information or help, don't hesitate to get in touch on the [Slack `#
 
 <!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
 <!-- If you use nf-core/genephylomodeler for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
+
+This pipeline uses methods from the [HyPhy](https://pubmed.ncbi.nlm.nih.gov/31504749/) (Hypothesis Testing using Phylogenies) suite.
 
 The test data uses an alignment of primate sequences for the KSR2 gene, a kinase suppressor of RAS-2, from [Enard et al, 2016](https://doi.org/10.7554/eLife.12469).
 
