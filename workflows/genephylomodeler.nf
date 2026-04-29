@@ -13,6 +13,7 @@ include { HYPHY_MEME              } from '../modules/local/hyphy_meme/main'
 include { HYPHY_FADE              } from '../modules/local/hyphy_fade/main'
 include { HYPHY_RELAX             } from '../modules/local/hyphy_relax/main'
 include { HYPHY_SLAC              } from '../modules/local/hyphy_slac/main'
+include { PAML_CODEML             } from '../modules/local/paml_codeml/main'
 include { softwareVersionsToYAML  } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 
 /*
@@ -35,7 +36,7 @@ workflow GENEPHYLOMODELER {
     //
     ch_samplesheet
         .branch {
-            meta, alignment, tree ->
+            meta, alignment, tree, control_file ->
                 absrel: meta.suite == 'hyphy' && meta.tool == 'absrel'
                 bgm:    meta.suite == 'hyphy' && meta.tool == 'bgm'
                 busted: meta.suite == 'hyphy' && meta.tool == 'busted'
@@ -46,67 +47,73 @@ workflow GENEPHYLOMODELER {
                 meme:   meta.suite == 'hyphy' && meta.tool == 'meme'
                 relax:  meta.suite == 'hyphy' && meta.tool == 'relax'
                 slac:   meta.suite == 'hyphy' && meta.tool == 'slac'
+                codeml: meta.suite == 'paml'  && meta.tool == 'codeml'
         }
         .set { ch_branched }
 
     //
     // MODULE: aBSREL - Adaptive Branch-Site Random Effects Likelihood
     //
-    HYPHY_ABSREL ( ch_branched.absrel )
+    HYPHY_ABSREL ( ch_branched.absrel.map { meta, aln, tree, _ctl -> [meta, aln, tree] } )
     ch_versions = ch_versions.mix(HYPHY_ABSREL.out.versions.first())
 
     //
     // MODULE: BGM - Bayesian Graphical Model
     //
-    HYPHY_BGM ( ch_branched.bgm )
+    HYPHY_BGM ( ch_branched.bgm.map { meta, aln, tree, _ctl -> [meta, aln, tree] } )
     ch_versions = ch_versions.mix(HYPHY_BGM.out.versions.first())
 
     //
     // MODULE: BUSTED - Branch-Site Unrestricted Statistical Test
     //
-    HYPHY_BUSTED ( ch_branched.busted )
+    HYPHY_BUSTED ( ch_branched.busted.map { meta, aln, tree, _ctl -> [meta, aln, tree] } )
     ch_versions = ch_versions.mix(HYPHY_BUSTED.out.versions.first())
 
     //
     // MODULE: FADE - FUBAR Approach to Directional Evolution
     //
-    HYPHY_FADE ( ch_branched.fade )
+    HYPHY_FADE ( ch_branched.fade.map { meta, aln, tree, _ctl -> [meta, aln, tree] } )
     ch_versions = ch_versions.mix(HYPHY_FADE.out.versions.first())
 
     //
     // MODULE: FEL - Fixed Effects Likelihood
     //
-    HYPHY_FEL ( ch_branched.fel )
+    HYPHY_FEL ( ch_branched.fel.map { meta, aln, tree, _ctl -> [meta, aln, tree] } )
     ch_versions = ch_versions.mix(HYPHY_FEL.out.versions.first())
 
     //
     // MODULE: FUBAR - Fast, Unconstrained Bayesian AppRoximation
     //
-    HYPHY_FUBAR ( ch_branched.fubar )
+    HYPHY_FUBAR ( ch_branched.fubar.map { meta, aln, tree, _ctl -> [meta, aln, tree] } )
     ch_versions = ch_versions.mix(HYPHY_FUBAR.out.versions.first())
 
     //
     // MODULE: GARD - Genetic Algorithm for Recombination Detection
     //
-    HYPHY_GARD ( ch_branched.gard )
+    HYPHY_GARD ( ch_branched.gard.map { meta, aln, tree, _ctl -> [meta, aln, tree] } )
     ch_versions = ch_versions.mix(HYPHY_GARD.out.versions.first())
 
     //
     // MODULE: MEME - Mixed Effects Model of Evolution
     //
-    HYPHY_MEME ( ch_branched.meme )
+    HYPHY_MEME ( ch_branched.meme.map { meta, aln, tree, _ctl -> [meta, aln, tree] } )
     ch_versions = ch_versions.mix(HYPHY_MEME.out.versions.first())
 
     //
     // MODULE: RELAX - Relaxed Selection Test
     //
-    HYPHY_RELAX ( ch_branched.relax )
+    HYPHY_RELAX ( ch_branched.relax.map { meta, aln, tree, _ctl -> [meta, aln, tree] } )
     ch_versions = ch_versions.mix(HYPHY_RELAX.out.versions.first())
 
     // MODULE: SLAC - Single-Likelihood Ancestor Counting
     //
-    HYPHY_SLAC ( ch_branched.slac )
+    HYPHY_SLAC ( ch_branched.slac.map { meta, aln, tree, _ctl -> [meta, aln, tree] } )
     ch_versions = ch_versions.mix(HYPHY_SLAC.out.versions.first())
+
+    // MODULE: CODEML
+    //
+    PAML_CODEML ( ch_branched.codeml )
+    ch_versions = ch_versions.mix(PAML_CODEML.out.versions.first())
 
     //
     // Collate and save software versions

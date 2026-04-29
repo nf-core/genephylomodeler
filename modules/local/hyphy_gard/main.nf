@@ -1,6 +1,6 @@
 process HYPHY_GARD {
     tag "$meta.id"
-    label 'process_medium'
+    label 'process_single'
 
     conda "${moduleDir}/environment.yml"
 

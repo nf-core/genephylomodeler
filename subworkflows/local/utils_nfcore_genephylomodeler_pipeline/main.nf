@@ -104,8 +104,8 @@ workflow PIPELINE_INITIALISATION {
     Channel
         .fromList(samplesheetToList(params.input, "${projectDir}/assets/schema_input.json"))
         .map {
-            meta, alignment, tree, suite, tool ->
-                return [ meta + [ suite: suite, tool: tool ], alignment, tree ]
+            meta, alignment, tree, suite, tool, control_file ->
+                return [ meta + [ suite: suite, tool: tool ], alignment, tree, control_file ]
         }
         .set { ch_samplesheet }
 

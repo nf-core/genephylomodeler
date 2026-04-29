@@ -21,7 +21,7 @@
 
 ## Introduction
 
-**nf-core/genephylomodeler** is a bioinformatics pipeline that fits evolutionary models and performs hypothesis testing on multiple sequence alignments of coding genes. These include (but are not limited to) detecting signatures of selection and estimating evolutionary rates using methods from HyPhy, PAML, and other packages. The pipeline takes a samplesheet with alignment files and phylogenetic trees as input, applies one or more tools of interest, and produces an output in JSON and text format.
+**nf-core/genephylomodeler** is a bioinformatics pipeline that uses codon-based methods to detect natural selection given multiple sequence alignments of protein-coding genes. The pipeline fits evolutionary models and performs hypothesis testing using HyPhy, PAML, and other phylogenetic analysis tools. It takes a samplesheet with alignment files and phylogenetic trees as input, applies one or more tools of interest, and produces an output in JSON and text format.
 
 <h1>
   <picture>
@@ -29,7 +29,9 @@
   </picture>
 </h1>
 
-The pipeline currently supports the following tools from HyPhy:
+The pipeline currently supports tools from the following packages:
+
+**HyPhy (Hypothesis Testing using Phylogenies)**
 
 - Adaptive Branch-Site Random Effects Likelihood ([`aBSREL`](https://www.hyphy.org/methods/selection-methods/#absrel))
 - Bayesian Graphical Model ([`BGM`](https://www.hyphy.org/methods/selection-methods/#bgm))
@@ -42,6 +44,10 @@ The pipeline currently supports the following tools from HyPhy:
 - Test for Relaxation or Intensification of Selection ([`RELAX`](https://www.hyphy.org/methods/selection-methods/#relax))
 - Single-Likelihood Ancestor Counting ([`SLAC`](https://www.hyphy.org/methods/selection-methods/#slac))
 
+**PAML (Phylogenetic Analysis by Maximum Likelihood)**
+
+- [`CODEML`](https://github.com/abacus-gene/paml/wiki/CODEML)
+
 ## Usage
 
 > [!NOTE]
@@ -52,11 +58,10 @@ First, prepare a samplesheet with your input data that looks as follows:
 `samplesheet.csv`:
 
 ```csv
-gene_name,alignment,tree,suite,tool
-KSR2,/path/to/ksr2.fna,/path/to/ksr2.tree,hyphy,absrel
-KSR2,/path/to/ksr2.fna,/path/to/ksr2.tree,hyphy,busted
-TRIM5,/path/to/trim5.fna,/path/to/trim5.tree,hyphy,meme
-MX1,/path/to/mx1.fna,/path/to/mx1_labeled.tree,hyphy,relax
+gene_name,alignment,tree,suite,tool,control_file
+KSR2,/path/to/ksr2.fna,/path/to/ksr2.tree,hyphy,absrel,
+KSR2,/path/to/ksr2.fna,/path/to/ksr2.tree,hyphy,busted,
+Mx,/path/to/Mx.phy,/path/to/Mx.tree,paml,codeml,codeml.ctl
 ```
 
 Each row represents a multiple sequence alignment for a gene.
@@ -69,6 +74,8 @@ nextflow run nf-core/genephylomodeler \
    --input samplesheet.csv \
    --outdir <OUTDIR>
 ```
+
+Note: Running the pipeline with `-profile docker` does not work on MacOS because HyPhy's Docker image is `linux/amd64`. Instead, use `-profile docker,arm64`.
 
 > [!WARNING]
 > Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_; see [docs](https://nf-co.re/docs/usage/getting_started/configuration#custom-configuration-files).
@@ -98,12 +105,11 @@ For further information or help, don't hesitate to get in touch on the [Slack `#
 
 ## Citations
 
-<!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
-<!-- If you use nf-core/genephylomodeler for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
+This pipeline uses methods from [HyPhy](https://pubmed.ncbi.nlm.nih.gov/31504749/) and [PAML](https://pubmed.ncbi.nlm.nih.gov/9367129/).
 
-This pipeline uses methods from the [HyPhy](https://pubmed.ncbi.nlm.nih.gov/31504749/) (Hypothesis Testing using Phylogenies) suite.
+The HyPhy test data uses an alignment of primate sequences for the KSR2 gene, a kinase suppressor of RAS-2, from [Enard et al, 2016](https://doi.org/10.7554/eLife.12469).
 
-The test data uses an alignment of primate sequences for the KSR2 gene, a kinase suppressor of RAS-2, from [Enard et al, 2016](https://doi.org/10.7554/eLife.12469).
+The CODEML test data uses alignment and tree files for the myxovirus gene sequences from ten mammal species and two birds from [Huo et al, 2007](https://pubmed.ncbi.nlm.nih.gov/17467195/).
 
 An extensive list of references for the tools used by the pipeline can be found in the [`CITATIONS.md`](CITATIONS.md) file.
 

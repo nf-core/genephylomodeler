@@ -1,3 +1,4 @@
-sample,fastq_1,fastq_2
-SAMPLE_PAIRED_END,/path/to/fastq/files/AEG588A1_S1_L002_R1_001.fastq.gz,/path/to/fastq/files/AEG588A1_S1_L002_R2_001.fastq.gz
-SAMPLE_SINGLE_END,/path/to/fastq/files/AEG588A4_S4_L003_R1_001.fastq.gz,
+gene_name,alignment,tree,suite,tool,control_file
+KSR2,/path/to/ksr2.fna,/path/to/ksr2.tree,hyphy,absrel,
+KSR2,/path/to/ksr2.fna,/path/to/ksr2.tree,hyphy,busted,
+Mx,/path/to/Mx.phy,/path/to/Mx.tree,paml,codeml,codeml.ctl

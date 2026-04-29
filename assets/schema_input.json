@@ -27,15 +27,27 @@
             },
             "suite": {
                 "type": "string",
-                "enum": ["hyphy"],
-                "errorMessage": "Suite must be one of: hyphy"
+                "enum": ["hyphy", "paml"],
+                "errorMessage": "Suite must be one of: hyphy, paml"
             },
             "tool": {
                 "type": "string",
-                "enum": ["absrel", "bgm", "busted", "fade", "fel", "fubar", "gard", "meme", "relax", "slac"],
-                "errorMessage": "Tool must be one of: absrel, bgm, busted, fade, fel, gard, meme, relax, slac"
+                "enum": ["absrel", "bgm", "busted", "fade", "fel", "fubar", "gard", "meme", "relax", "slac", "codeml"],
+                "errorMessage": "Tool must be one of: absrel, bgm, busted, fade, fel, gard, meme, relax, slac, codeml"
+            },
+            "control_file": {
+                "type": "string",
+                "format": "file-path",
+                "pattern": "^\\S+\\.(ctl|txt)$",
+                "errorMessage": "Control file must have a valid extension (.ctl, .txt)"
             }
         },
-        "required": ["gene_name", "alignment", "suite", "tool"]
+        "required": ["gene_name", "alignment", "suite", "tool"],
+        "allOf": [
+        {
+            "if": { "properties": { "suite": { "const": "paml" } } },
+            "then": { "required": ["control_file"] }
+        }
+        ]
     }
 }

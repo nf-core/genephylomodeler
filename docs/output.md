@@ -6,7 +6,7 @@ This document describes the output produced by the pipeline. The directories lis
 
 ## Pipeline overview
 
-The pipeline is built using [Nextflow](https://www.nextflow.io/) and runs selection analysis using [HyPhy](https://www.hyphy.org/) with the following methods:
+The pipeline is built using [Nextflow](https://www.nextflow.io/) and runs selection analysis using [HyPhy](https://www.hyphy.org/) and [PAML](https://github.com/abacus-gene/paml/tree/master) with the following methods:
 
 - [aBSREL](#absrel) - Adaptive Branch-Site Random Effects Likelihood
 - [BGM](#bgm) - Bayesian Graphical Model
@@ -18,6 +18,7 @@ The pipeline is built using [Nextflow](https://www.nextflow.io/) and runs select
 - [MEME](#meme) - Mixed Effects Model of Evolution
 - [RELAX](#relax) - Test for relaxation or intensification of selection
 - [SLAC](#slac) - Single-Likelihood Ancestor Counting
+- [CODEML](#codeml) - PAML codon-substitution models for selection analysis
 - [Pipeline information](#pipeline-information) - Report metrics generated during the workflow execution
 
 ### aBSREL
@@ -149,6 +150,19 @@ RELAX is a hypothesis testing framework that asks whether the strength of natura
 </details>
 
 SLAC (Single-Likelihood Ancestor Counting) is a counting-based method that estimates the number of synonymous and non-synonymous substitutions at each site by reconstructing ancestral sequences via maximum likelihood. It is the fastest site-level selection method and is well-suited for preliminary screening of large datasets.
+
+### CODEML
+
+<details markdown="1">
+<summary>Output files</summary>
+
+- `codeml/`
+  - `*_CODEML_output.txt`: Main PAML CODEML results file containing maximum likelihood estimates, model parameters (ω, κ, branch lengths), and likelihood values for the requested codon substitution model.
+  - `*.log`: Standard output log captured from the CODEML run, including the PAML version banner and convergence diagnostics.
+
+</details>
+
+CODEML, part of the [PAML](https://github.com/abacus-gene/paml/tree/master) package, fits codon-substitution models by maximum likelihood to estimate the non-synonymous-to-synonymous substitution rate ratio (ω = dN/dS). It supports a wide range of analyses depending on the user-supplied control file, including site models (M0, M1a, M2a, M7, M8) for site-level selection, branch models for lineage-specific ω, and branch-site models for episodic selection on designated foreground branches.
 
 ### Pipeline information
 
