@@ -44,10 +44,10 @@
         },
         "required": ["gene_name", "alignment", "suite", "tool"],
         "allOf": [
-        {
-            "if": { "properties": { "suite": { "const": "paml" } } },
-            "then": { "required": ["control_file"] }
-        }
+            {
+                "if": { "properties": { "suite": { "const": "paml" } } },
+                "then": { "required": ["control_file"] }
+            }
         ]
     }
 }
