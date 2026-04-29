@@ -46,11 +46,27 @@
 
   > Wertheim JO, Murrell B, Smith MD, Kosakovsky Pond SL, Scheffler K. RELAX: detecting relaxed selection in a phylogenetic framework. Mol Biol Evol. 2015 Mar;32(3):820-32. doi: 10.1093/molbev/msu400. Epub 2014 Dec 23. PMID: 25540451; PMCID: PMC4327161.
 
-## Pipeline references
+- [PAML](https://pubmed.ncbi.nlm.nih.gov/9367129/)
 
-- [Enard et al. (2016)](https://doi.org/10.7554/eLife.12469)
+  > Yang Z. PAML: a program package for phylogenetic analysis by maximum likelihood. Comput Appl Biosci. 1997 Oct;13(5):555-6. doi: 10.1093/bioinformatics/13.5.555. PMID: 9367129.
+
+- [PAML 4](https://pubmed.ncbi.nlm.nih.gov/17483113/)
+
+  > Yang Z. PAML 4: phylogenetic analysis by maximum likelihood. Mol Biol Evol. 2007 Aug;24(8):1586-91. doi: 10.1093/molbev/msm088. Epub 2007 May 4. PMID: 17483113.
+
+- [CODEML](https://academic.oup.com/mbe/article/40/4/msad041/7140562)
+
+  > Álvarez-Carretero S, Kapli P, Yang Z. Beginner's Guide on the Use of PAML to Detect Positive Selection. Mol Biol Evol. 2023;40(4):msad041. doi:10.1093/molbev/msad041.
+
+## Test data
+
+- [HyPhy](https://doi.org/10.7554/eLife.12469)
 
   > Enard D, Cai L, Gwennap C, Petrov DA. Viruses are a dominant driver of protein adaptation in mammals. eLife. 2016 May 17;5:e12469. doi: 10.7554/eLife.12469.
+
+- [CODEML](https://pubmed.ncbi.nlm.nih.gov/17467195/)
+
+  > Hou ZC, Xu GY, Su Z, Yang N. Purifying selection and positive selection on the myxovirus resistance gene in mammals and chickens. Gene. 2007 Jul 1;396(1):188-95. doi: 10.1016/j.gene.2007.03.017. Epub 2007 Apr 1. PMID: 17467195.
 
 ## Software packaging/containerisation tools
 

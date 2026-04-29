@@ -8,7 +8,7 @@
 
 ## Samplesheet input
 
-You will need to create a samplesheet with information about the genes you would like to analyse before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 5 columns and a header row as shown in the example below.
+You will need to create a samplesheet with information about the genes you would like to analyse before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 6 columns and a header row as shown in the example below.
 
 ```bash
 --input '[path to samplesheet file]'
@@ -19,22 +19,26 @@ You will need to create a samplesheet with information about the genes you would
 Each row represents one analysis: a gene alignment paired with a phylogenetic tree and a specific analysis tool.
 
 ```csv title="samplesheet.csv"
-gene_name,alignment,tree,suite,tool
-KSR2,/path/to/ksr2.fna,/path/to/ksr2.tree,hyphy,absrel
-KSR2,/path/to/ksr2.fna,/path/to/ksr2.tree,hyphy,busted
-TRIM5,/path/to/trim5.fna,/path/to/trim5.tree,hyphy,meme
-MX1,/path/to/mx1.fna,/path/to/mx1_labeled.tree,hyphy,relax
+gene_name,alignment,tree,suite,tool,control_file
+KSR2,/path/to/ksr2.fna,/path/to/ksr2.tree,hyphy,absrel,
+KSR2,/path/to/ksr2.fna,/path/to/ksr2.tree,hyphy,busted,
+Mx,/path/to/Mx.phy,/path/to/Mx.tree,paml,codeml,codeml.ctl
 ```
 
-| Column      | Description                                                                                                        |
-| ----------- | ------------------------------------------------------------------------------------------------------------------ |
-| `gene_name` | Gene identifier used for naming output files. Spaces are automatically converted to underscores (`_`).             |
-| `alignment` | Full path to the multiple sequence alignment file (FASTA nucleotide format).                                       |
-| `tree`      | Full path to the Newick tree file. Some tools (BUSTED, RELAX) require labeled branches.                            |
-| `suite`     | The software suite to use (currently: `hyphy`).                                                                    |
-| `tool`      | The analysis method to run: `absrel`, `bgm`, `busted`, `fade`, `fel`, `fubar`, `gard`, `meme`, `relax`, or `slac`. |
+| Column         | Description                                                                                                                  |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `gene_name`    | Gene identifier used for naming output files. Spaces are automatically converted to underscores (`_`).                       |
+| `alignment`    | Full path to the multiple sequence alignment file (FASTA for HyPhy or PHYLIP for CODEML).                                    |
+| `tree`         | Full path to the Newick tree file. Some tools (BUSTED, RELAX, CODEML branch models) require labeled branches.                |
+| `suite`        | The software suite to use: `hyphy` or `paml`.                                                                                |
+| `tool`         | The analysis method to run: `absrel`, `bgm`, `busted`, `fade`, `fel`, `fubar`, `gard`, `meme`, `relax`, `slac`, or `codeml`. |
+| `control_file` | Path to a PAML control file (`.ctl` / `.txt`). Required when running CODEML, leave blank for HyPhy rows.                     |
 
-An [example samplesheet](../tests/data/samplesheet_test.csv) has been provided with the pipeline.
+### Control file
+
+When running CODEML, you must supply a control file in the `control_file` column. The pipeline rewrites the `outfile` line at runtime so the output is named consistently (`<gene_name>_CODEML_output.txt`); all other settings come from your control file.
+
+A template is provided at [`assets/template_CODEML.ctl`](../assets/template_CODEML.ctl). The `seqfile`, `treefile`, and `outfile` placeholders are overwritten by the pipeline, so you only need to set the model parameters relevant to your hypothesis (e.g. `model`, `NSsites`, `CodonFreq`, `fix_omega`, `omega`, `clock`, etc.). Refer to the [PAML documentation](https://github.com/abacus-gene/paml/blob/master/doc/pamlDOC.pdf) for the full list of options and recommended values for common analyses (branch, branch-site, site, and clock models).
 
 ## Running the pipeline
 

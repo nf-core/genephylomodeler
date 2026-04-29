@@ -32,6 +32,9 @@
                 "HYPHY_SLAC": {
                     "hyphy": "2.5.96(MP)"
                 },
+                "PAML_CODEML": {
+                    "codeml": "4.10.10"
+                },
                 "Workflow": {
                     "nf-core/genephylomodeler": "v1.0.0dev"
                 }
@@ -46,6 +49,9 @@
                 "busted",
                 "busted/KSR2_BUSTED.json",
                 "busted/KSR2_BUSTED_output.txt",
+                "codeml",
+                "codeml/Mx.log",
+                "codeml/Mx_CODEML_output.txt",
                 "fade",
                 "fade/KSR2_FADE.json",
                 "fade/KSR2_FADE_output.txt",
@@ -78,6 +84,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2026-03-16T11:49:07.668487"
+        "timestamp": "2026-04-29T16:20:09.824899"
     }
 }
