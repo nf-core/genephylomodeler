@@ -28,15 +28,15 @@ Mx,/path/to/Mx.phy,/path/to/Mx.tree,paml,codeml,codeml.ctl
 | Column         | Description                                                                                                                  |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | `gene_name`    | Gene identifier used for naming output files. Spaces are automatically converted to underscores (`_`).                       |
-| `alignment`    | Full path to the multiple sequence alignment file (FASTA for `hyphy` or PHYLIP for `codeml`).                                |
-| `tree`         | Full path to the Newick tree file. Some tools (BUSTED, RELAX, `codeml` branch models) require labeled branches.              |
+| `alignment`    | Full path to the multiple sequence alignment file (FASTA for HyPhy or PHYLIP for CODEML).                                    |
+| `tree`         | Full path to the Newick tree file. Some tools (BUSTED, RELAX, CODEML branch models) require labeled branches.                |
 | `suite`        | The software suite to use: `hyphy` or `paml`.                                                                                |
 | `tool`         | The analysis method to run: `absrel`, `bgm`, `busted`, `fade`, `fel`, `fubar`, `gard`, `meme`, `relax`, `slac`, or `codeml`. |
-| `control_file` | Path to a PAML control file (`.ctl` / `.txt`). **Required when `suite=paml`**, leave blank for HyPhy rows.                   |
+| `control_file` | Path to a PAML control file (`.ctl` / `.txt`). Required when running CODEML, leave blank for HyPhy rows.                     |
 
 ### Control file
 
-When running `codeml` (suite `paml`), you must supply a control file in the `control_file` column. The pipeline rewrites the `outfile` line at runtime so the output is named consistently (`<gene_name>_CODEML_output.txt`); all other settings come from your control file.
+When running CODEML, you must supply a control file in the `control_file` column. The pipeline rewrites the `outfile` line at runtime so the output is named consistently (`<gene_name>_CODEML_output.txt`); all other settings come from your control file.
 
 A template is provided at [`assets/template_CODEML.ctl`](../assets/template_CODEML.ctl). The `seqfile`, `treefile`, and `outfile` placeholders are overwritten by the pipeline, so you only need to set the model parameters relevant to your hypothesis (e.g. `model`, `NSsites`, `CodonFreq`, `fix_omega`, `omega`, `clock`, etc.). Refer to the [PAML documentation](https://github.com/abacus-gene/paml/blob/master/doc/pamlDOC.pdf) for the full list of options and recommended values for common analyses (branch, branch-site, site, and clock models).
 

@@ -77,13 +77,13 @@
                 "slac/KSR2_SLAC_output.txt"
             ],
             [
-                "Mx.log:md5,6c121691591b1b521307106e56d22964"
+                
             ]
         ],
         "meta": {
             "nf-test": "0.9.3",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2026-04-29T15:54:36.207383"
+        "timestamp": "2026-04-29T16:20:09.824899"
     }
 }
