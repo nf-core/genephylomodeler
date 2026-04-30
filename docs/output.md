@@ -1,4 +1,4 @@
-# nf-core/hyphy: Output
+# nf-core/genephylomodeler: Output
 
 ## Introduction
 

@@ -1,5 +1,5 @@
 name: Feature request
-description: Suggest an idea for the nf-core/hyphy pipeline
+description: Suggest an idea for the nf-core/genephylomodeler pipeline
 labels: enhancement
 body:
   - type: textarea
