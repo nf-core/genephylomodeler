@@ -1,14 +1,15 @@
 repository_type: pipeline
-
 nf_core_version: 3.4.1
-
 lint:
   files_unchanged:
     - assets/nf-core-genephylomodeler_logo_light.png
     - docs/images/nf-core-genephylomodeler_logo_light.png
     - docs/images/nf-core-genephylomodeler_logo_dark.png
     - .gitignore
-
+    - .github/workflows/branch.yml
+    - .github/workflows/linting.yml
+  files_exist:
+    - .github/workflows/linting_comment.yml
 template:
   org: nf-core
   name: genephylomodeler
