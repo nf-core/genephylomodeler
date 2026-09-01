@@ -1,10 +1,14 @@
 lint:
+  files_exist:
+    - .github/workflows/linting_comment.yml
   files_unchanged:
     - assets/nf-core-genephylomodeler_logo_light.png
     - docs/images/nf-core-genephylomodeler_logo_light.png
     - docs/images/nf-core-genephylomodeler_logo_dark.png
     - .gitignore
-nf_core_version: 4.0.3
+    - .github/workflows/branch.yml
+    - .github/workflows/linting.yml
+nf_core_version: 4.1.0
 repository_type: pipeline
 template:
   author: Nina Xiong
